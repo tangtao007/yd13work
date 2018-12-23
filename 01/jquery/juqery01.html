@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>jquery技术内幕</title>
+</head>
+<body>
+    <script>
+        (function(window,undefiend){
+            var jQuery = function(selector,context){
+                return jQuery.fn.init(selector,context);
+            }
+            jQuery.fn = jQuery.prototype = {
+                init: function(selector,context){
+
+                }
+            }
+        })(window)
+    </script>
+</body>
+</html>
