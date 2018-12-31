@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+div{
+    height: 150px;
+}
+.left{
+    width: 300px;
+    background: orange;
+    float: left;
+    margin-left: -100%;
+    position: relative;
+    left: -300px;
+}
+.right{ 
+    width: 200px;
+    float: left;
+    margin-left: -200px;
+    background: blue;
+    position: relative;
+    right: -200px;
+
+}
+.middle{
+    background: yellow;
+    float: left;
+    width: 100%;
+}
+.middle .inner{
+    margin-left: 300px;
+}
+.container{
+    padding-left: 300px;
+    padding-right: 200px;
+}
