@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>js测试题</title>
+</head>
+
+<body>
+    <script>
+        // alert(a) // a function 
+
+        // a();// alert(10)
+
+        // var a = 3; 
+
+        // function a() {
+
+        //     alert(10)
+        // }
+
+        // alert(a) // 3
+        // a = 6;
+        // a();// 报错
+
+
+        // function test(){
+        //     console.log("1");
+        // }
+        // function init(){
+        //     if(true){
+        //         function test(){
+        //             console.log(2);
+        //             function ddd (){
+        //                 console.log("xxxxx");
+        //             }
+        //         }
+        //         test();
+        //         console.log(ddd);
+        //     }
+            
+        //     //console.log(ddd);
+        // }
+        // init();
+
+        // function test(){
+        //     console.log("1");
+        // }
+        // function init(){
+        //     if(false){
+        //         function test(){
+        //             console.log(2);
+        //         }
+        //     }
+        //     console.log(test);
+        // }
+        // init();
+        // function test(){
+        //     console.log(this);
+        // }
+        // var obj = {
+        //     f: test
+        // };
+        // (obj.f)();
+        // (false || obj.f)();
+
+        function test(n){
+            n = {
+                v: 5
+            }
+        }
+        var m = {
+            k: 30
+        }
+        test(m);
+        alert(m.v);
+    </script>
+</body>
+
+</html>
