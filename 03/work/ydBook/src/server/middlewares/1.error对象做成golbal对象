@@ -1,0 +1,38 @@
+1.error对象做成golbal对象
+
+
+//['[[', ']]']
+
+"[[","]]"
+
+
+ <div id="app7">
+        <p>{{message}}</p>
+        <input v-model="message">
+    </div>
+
+ rize合适做爬虫和预渲染
+
+ ssserver -c /etc/shadowsocks.json -d start
+
+
+ vim /etc/supervisord.conf
+
+ Abc1234%
+
+
+进程的目的就是担当分配系统资源(CPU时间、内存)的实体 线程是操作系统能够进行运算调度的最小单位 协程是一种用户态的轻量级线程，无法利用多核资源。 IO密集型应用的发展: 多进程->多线程->事件驱动->协程 CPU密集型应用的发展:多进程->多线程 调度和切换的时间:进程 > 线程 > 协程
+
+
+ssh-copy-id -i "tangtao_mail_rsa.pub" root@119.29.106.61
+
+ssh-copy-id -i "tangtao_mail_rsa.pub" root@65.49.200.87 -p 27147
+
+
+1、生成秘钥对
+ssh-keygen -t rsa -C "你自己的名字" -f "你自己的名字_rsa"
+2、上传配置公钥
+上传公钥到服务器对应账号的home路径下的.ssh/中 ( ssh-copy-id -i "公钥文件名" 用户名@服务器ip或域名 ) 配置公钥文件访问权限为 600
+3、配置本地私钥 把第一步生成的私钥复制到你的home目录下的.ssh/ 路径下 配置你的私钥文件访问权限为 600
+chmod 600 你的私钥文件名
+4、免密登陆功能的本地配置文件 编辑自己home目录的.ssh/ 路径下的config文件 配置config文件的访问权限为 644

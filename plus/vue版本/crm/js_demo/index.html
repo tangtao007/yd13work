@@ -1,0 +1,75 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // // 1.函数表达式 和匿名函数的自执行函数的函数名是只读的
+            // var f = function yideng(a) {
+            //     yideng(a);
+            //     console.log(typeof yideng); // Function
+            // }
+            // f('yidieng');
+            // console.log(typeof yideng) // undefined
+
+            // // 2.原型链的考察,Function的name是只读的
+            // Object.protoype.name = 'yideng';
+            // var s = '11';
+            // function a() {};
+            // console.log(s.name) // 'yideng'
+            // console.log(a.name)  // 'a'
+
+            // // 3. 原型链的考察
+            // function yideng() {};
+            // yideng.__proto__.__proto__.constructor.constructor.constructor 
+            // // f Function {[native code]}
+
+            // // 4. 原型链的考察
+            // function yideng() {};
+            // yideng.prototype.constructor.constructor.__proto__
+            // // 首先我们得知道 指向的Function.prototype
+            // // 打印出来是  f(){[native code]}
+            // // 为啥是native code（chrome或者Firefox认为是原生代码的原因在于他确实是原生的，Webkit和Firefox开发人员已经用c或者c编写了该功能,而不是javaScript）
+
+            // // js万物都是对象，但是Object的创建终点是内部封装的函数
+
+            // 5.语法有限
+            console.log({}+[]) // [object Object]
+            {}+ []; // 0
+            // {} +[] 根据语句优先的原则{}被理解成复合语句块，因为相当于{};+[],[]隐式转换成0,结果为0 
+            // console.log({}+[]), js把（）语句当成一个表达式，因为{}不能被理解成语句块，
+
+
+            // 6、隐式转换
+                // var yideng = [0];
+                // if(yideng) {
+                //     console.log(yideng == true)  
+                // }else {
+                //     console.log(yideng);
+                // }
+
+
+            // 7、
+            // 2  yideng end 3 4
+            const pro = new Promise((resolve, reject) => {
+                const innerPro = new Promise((resolve, reject) => {
+                    setTimeout(() => {
+                        resolve(1)
+                    })
+                    console.log(2)
+                    resolve(3)
+                })
+                resolve(4);
+                innerPro.then(res => console.log(res))
+                console.log('yideng')
+            })
+            pro.then(res => console.log(res))
+            console.log('end')
+
+        </script>
+    </body>
+    </html>

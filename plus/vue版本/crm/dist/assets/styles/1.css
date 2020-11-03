@@ -1,0 +1,91 @@
+
+.el-row[data-v-16f47e09] {
+    margin-bottom: 20px;
+}
+.grid-content[data-v-16f47e09] {
+    display: flex;
+    align-items: center;
+    height: 100px;
+}
+.grid-cont-right[data-v-16f47e09] {
+    flex: 1;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.grid-num[data-v-16f47e09] {
+    font-size: 30px;
+    font-weight: bold;
+}
+.grid-con-icon[data-v-16f47e09] {
+    font-size: 50px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    line-height: 100px;
+    color: #fff;
+}
+.grid-con-1 .grid-con-icon[data-v-16f47e09] {
+    background: rgb(45, 140, 240);
+}
+.grid-con-1 .grid-num[data-v-16f47e09] {
+    color: rgb(45, 140, 240);
+}
+.grid-con-2 .grid-con-icon[data-v-16f47e09] {
+    background: rgb(100, 213, 114);
+}
+.grid-con-2 .grid-num[data-v-16f47e09] {
+    color: rgb(45, 140, 240);
+}
+.grid-con-3 .grid-con-icon[data-v-16f47e09] {
+    background: rgb(242, 94, 67);
+}
+.grid-con-3 .grid-num[data-v-16f47e09] {
+    color: rgb(242, 94, 67);
+}
+.user-info[data-v-16f47e09] {
+    display: flex;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
+}
+.user-avator[data-v-16f47e09] {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+.user-info-cont[data-v-16f47e09] {
+    padding-left: 50px;
+    flex: 1;
+    font-size: 14px;
+    color: #999;
+}
+.user-info-cont div[data-v-16f47e09]:first-child {
+    font-size: 30px;
+    color: #222;
+}
+.user-info-list[data-v-16f47e09] {
+    font-size: 14px;
+    color: #999;
+    line-height: 25px;
+}
+.user-info-list span[data-v-16f47e09] {
+    margin-left: 70px;
+}
+.mgb20[data-v-16f47e09] {
+    margin-bottom: 20px;
+}
+.todo-item[data-v-16f47e09] {
+    font-size: 14px;
+}
+.todo-item-del[data-v-16f47e09] {
+    text-decoration: line-through;
+    color: #999;
+}
+.schart[data-v-16f47e09] {
+    width: 100%;
+    height: 300px;
+}
+
+

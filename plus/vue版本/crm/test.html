@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 0-10的求和
+        // function getSum(n){
+        //     if(n== 1) {
+        //         return 1;
+        //     }else {
+        //        return n + getSum(n-1);
+        //     }
+        // }
+        function getSum(n, sum) {
+            if(n ==0) {
+                return sum;
+            }else {
+                return getSum(n-1, n+sum)
+            }
+        }
+        console.log(getSum(10, 0));
+        console.log({});
+
+    </script>
+</body>
+</html>
+<script>
+// var f = function yideng(a) {
+//     yideng = a;
+//     console.log(typeof yideng);
+//     return 23;
+// }
+// f('jingchengyideng');
+// console.log(typeof yideng)
+var yideng = [];
+if(yideng) {
+    console.log(yideng == true)
+}else {
+    console.log(yideng)
+}
+
+</script>

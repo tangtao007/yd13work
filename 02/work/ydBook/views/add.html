@@ -1,0 +1,27 @@
+{% extends './layout.html' %}
+
+{% block title %} 新增新闻{% endblock%}
+
+{% block head %}
+<link rel="stylesheet" href="./styles/index.css">
+{% endblock%}
+{% block content %}
+{% include "../components/news/add.html" %}
+{% endblock %}
+
+{% block script %}
+<script src="https://cdn.staticfile.org/jquery/3.3.1/jquery.min.js"></script>
+<script type="module">
+    import("/scripts/add.js").then((__)=>{
+        const create = new __.default();
+        create.fn();
+    });
+</script>
+<script type="nomodule" src="https://cdn.bootcss.com/systemjs/3.0.0/system.js"></script>
+<script type="nomodule">
+    System.import('/scripts/add-bundle.js').then((__)=>{
+        const create = new __.default();
+        create.fn();
+    });
+</script>
+{% endblock %}
