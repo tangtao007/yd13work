@@ -1,29 +1,28 @@
 import { parseScript } from "esprima";
 import { Pattern } from "estree";
-import CreateIoc from './ioc';
-
+import CreateIoc from "./ioc";
+import "reflect-metadata";
 // 容量区
-interface ITypes{
-    [key:string]:Symbol;
+interface ITypes {
+  [key: string]: Symbol;
 }
 
-const TYPES:ITypes = {
-    indexService:Symbol.for('indexService')
-}
+const TYPES: ITypes = {
+  indexService: Symbol.for("indexService"),
+};
 // 管理需要注入的容器
 const container = new CreateIoc();
 
 interface IIndexService {
   log(str: string): void;
 }
-class IndexService implements IIndexService{
+class IndexService implements IIndexService {
   log(str: string) {
     console.log(str);
   }
 }
 
-container.bind<IIndexService>(TYPES.indexService,IndexService)
-
+container.bind<IIndexService>(TYPES.indexService, IndexService);
 
 // -------------------------分界线 应该写入另一个文件
 
@@ -38,12 +37,28 @@ function getParams(fn: Function) {
   let validParams: string[] = [];
   fnParams.forEach((obj) => {
     if (obj.type == "Identifier") {
-        console.log(obj.name);
-        
+      console.log(obj.name);
+
       validParams.push(obj.name);
     }
   });
   return validParams;
+}
+
+function hasKey<O extends Object>(obj: O, key: PropertyKey): key is keyof O {
+  return obj.hasOwnProperty(key);
+}
+
+function inject(serviceIdentifier: Symbol): Function {
+  return (target: Function, targetKey: string, index: number) => {
+    if (!targetKey) {
+      Reflect.defineMetadata(
+        serviceIdentifier,
+        container.use(serviceIdentifier),
+        target
+      );
+    }
+  };
 }
 
 function controller<T extends { new (...args: any[]): {} }>(constructor: T) {
@@ -52,9 +67,11 @@ function controller<T extends { new (...args: any[]): {} }>(constructor: T) {
       super(args);
       let _params = getParams(constructor);
       console.log("🍊", _params);
-      let indentity:string;
-      for(indentity of _params){
-          this[indentity] = container.use<IIndexService>(TYPES[indentity]);
+      let indentity: string;
+      for (indentity of _params) {
+        if (hasKey(this, indentity)) {
+          this[indentity] = Reflect.getMetadata(TYPES[indentity], constructor);
+        }
       }
     }
   }
@@ -64,8 +81,9 @@ function controller<T extends { new (...args: any[]): {} }>(constructor: T) {
 @controller
 class IndexController {
   private indexService: IIndexService;
-  constructor(indexService?: IIndexService) {
-    this.indexService = indexService;
+  constructor(@inject(TYPES.indexService) indexService?: IIndexService) {
+    this.indexService = indexService!;
+    console.log("我是构造函数！");
   }
   info() {
     this.indexService.log("hello world");
